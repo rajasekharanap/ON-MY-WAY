@@ -1,0 +1,218 @@
+/* register.html styles */
+.register_all {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgb(235, 235, 236);
+  }
+  .register_container {
+    position: relative;
+    max-width: 800px;
+    width: 80%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+  }
+  .register_container header {
+    font-size: 35px;
+    color: #2581c7;
+    font-weight: normal;
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  .register_container .form {
+    margin-top:40px;
+  }
+  .register_form .register_input-box {
+    width: 90%;
+    margin-top: 20px;
+  }
+  .register_input-box label {
+    color: #111111;
+  }
+  .register_form :where(.register_input-box input, .register_select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #646161;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+  }
+  
+  .register_form .register_user-box {
+    margin-top: 20px;
+  }
+
+  .register_form :where(.register_user-option, .register_user) {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+  }
+  
+  .register_form .register_user {
+    column-gap: 5px;
+  }
+  .register_user input {
+    accent-color: rgb(9, 9, 9);
+  }
+  .register_form :where(.register_user input, .register_user label) {
+    cursor: pointer;
+  }
+  .register_user label {
+    color: #707070;
+  }
+  
+  .register_form button {
+    height: 45px;
+    width: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #2581c7;
+    margin: 20px 200px;
+  }
+  .register_form button:hover {
+    background: rgb(14, 14, 16);
+  }
+  /*Responsive*/
+  @media screen and (max-width: 500px) {
+    .register_form .column {
+      flex-wrap: wrap;
+    }
+  }
+  .register_login {
+    color:  #2581c7;
+    text-decoration: none;
+    font-size: large;
+  }
+  /* register.html styles */
+
+  
+  /* login.html styles */
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+  
+  .login_row {
+    display: flex;
+    margin: 10px auto;
+    width: 80%;
+    height: 700px;
+    background-color: rgb(230, 237, 235);
+  }
+  
+  .login_containerleft {
+    width: 60%;
+    height: 400px;
+    margin: 230px auto;
+    background-color: rgb(230, 237, 235);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .login_containerright {
+    width: 50%;
+    height: 500px;
+    margin: 100px 40px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .login_loginform {
+    padding: 20px;
+  }
+  
+  .login_heading {
+    margin-bottom: 20px;
+    color: #2581c7;
+  }
+  
+ .login_about {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .login_label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .login_input {
+    width: 70%;
+    padding: 10px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .login_submit {
+    background-color: #2581c7;
+    color: white;
+    padding: 10px 70px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  .login_submit:hover {
+    opacity: 0.8;
+  }
+  
+  .login_forgot {
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+  
+  .login_forgot a {
+    font-size: small;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .login_account {
+    font-size: large;
+    margin-bottom: 0px;
+  }
+  
+  .login_register {
+    font-size: medium;
+    margin-top: 0px;
+  }
+  
+  .login_register a {
+    text-decoration: none;
+    color: #2581c7;
+  }
+  
+  /* login.html styles */
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,31 @@
+{% extends 'common.html' %}
+{% load static %}
+
+{% block content %}
+<div class="login_row">
+    <div class="login_containerleft">
+      <div class="login_loginform">
+        <h1 class="login_heading">Find a reliable ride or share your empty seat with us...</h1>
+        <p class="login_about">
+          Join our trusted carpooling community for reliable rides and eco-friendly commuting solutions. Share rides, reduce emissions, and make a positive impact on your commute.
+        </p>
+      </div>
+    </div>
+    <div class="login_containerright">
+      <div class="login_loginform">
+        <h1 class="login_heading">Login</h1>
+        <form>
+          <label class="login_label" for="username" >Username:</label>
+          <input class="login_input" type="text" id="username" placeholder="Username" required>
+          <label class="login_label" for="password" >Password:</label>
+          <input class="login_input" type="password" id="password" placeholder="Password" required>
+          <button class="login_submit" type="submit">Login</button>
+        </form>
+      </div>
+      <h3 class="login_forgot"><a href="/forgotpassword/">Forgot password?</a></h3>
+      <h3 class="login_account">Don't have an account?</h3>
+      <h1 class="login_register"><a href="/register/">Register Here</a></h1>
+    </div>
+</div>
+{% endblock %}
+  
