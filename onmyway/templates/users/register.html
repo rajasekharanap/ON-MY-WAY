@@ -6,9 +6,9 @@
     <section class="register_container">
         <header>Join Our Community</header>
         {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <div class="register_alert alert-{{ message.tags }}">
             <strong>Sorry!</strong> {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button class="register_close_btn" aria-label="Close">×</button>
         </div>
         {% endfor %}
         <form class="register_form" method="post" enctype="multipart/form-data" action="{% url 'register' %}">
@@ -71,6 +71,20 @@
 </div>
 
 <script>
+
+    // Get all close buttons
+    const closeButtons = document.querySelectorAll('.register_close_btn');
+
+    // Add event listener to each close button
+    closeButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            // Find the parent alert div and remove it
+            const alertDiv = btn.closest('.register_alert');
+            if (alertDiv) {
+                alertDiv.parentNode.removeChild(alertDiv);
+            }
+        });
+    });
     // JavaScript code to toggle file upload inputs based on user type selection
     document.addEventListener("DOMContentLoaded", function () {
     const passengerRadio = document.getElementById("check-passenger");

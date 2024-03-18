@@ -1,6 +1,7 @@
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 import re
 from .models import CustomUser, UserFiles
 
@@ -50,8 +51,6 @@ def register(request):
             for error in errors:
                 messages.error(request, error)
             return redirect('register')
-            
-        
         else:
             user = CustomUser.objects.create(
                 email = email,
@@ -70,14 +69,32 @@ def register(request):
                 vehiclecertificate = vehiclecertificate
             )
             userfiles.save()      
-            print(user.fullname, user.phone, user.email, user.password, user.usertype, userfiles.userfile, userfiles.govtid, userfiles.license, userfiles.vehiclecertificate)
-            return redirect('login') 
-    
+            return redirect('user_login')
     return render(request, 'users/register.html')
 
 
-def login(request):
+def user_login(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        print(email, password)
+
+        user = authenticate(email=email, password=password)
+        print(user)
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Login Successful")
+            return redirect('userprofile')
+        else:
+            messages.success(request, "Invalid email or password. Please try again")
+            return redirect('user_login')
     return render(request, 'users/login.html')
+
+
+def user_logout(request):
+    messages.success(request, "Logout successful")
+    logout(request)
+    return redirect('user_login')
 
 
 def forgotpassword(request):

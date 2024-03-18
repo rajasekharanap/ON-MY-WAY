@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('find', include('findtrip.urls')),
     path('post', include('posttrip.urls')),
+    path('working', include('otherpages.urls')),
 ]
 
 if settings.DEBUG:

@@ -14,11 +14,12 @@
     <div class="login_containerright">
       <div class="login_loginform">
         <h1 class="login_heading">Login</h1>
-        <form>
-          <label class="login_label" for="username" >Username:</label>
-          <input class="login_input" type="text" id="username" placeholder="Username" required>
+        <form action="{% url 'user_login' %}" method="post">
+          {% csrf_token %}
+          <label class="login_label" for="email" >Email:</label>
+          <input class="login_input" type="text" name="email" id="email" placeholder="Email" required>
           <label class="login_label" for="password" >Password:</label>
-          <input class="login_input" type="password" id="password" placeholder="Password" required>
+          <input class="login_input" type="password" name="password" id="password" placeholder="Password" required>
           <button class="login_submit" type="submit">Login</button>
         </form>
       </div>

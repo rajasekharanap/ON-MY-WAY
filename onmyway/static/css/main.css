@@ -2,7 +2,8 @@
     margin-top: 80px; /* Adjust the margin-top to create space between the navbar and content */
 }
 
-/* navbar styles */
+/* navbar.html styles */
+/* navbar.html styles */
 .navbar {
     overflow: hidden;
     background-color: white;
@@ -67,7 +68,8 @@
     font-weight: normal;
 }
 
-.navbar_navlinks a:hover {
-    color: #ed6810;
+.navbar_navlinks li a i {
+    margin-right: 5px; /* Adjust the margin-right to create space between the icon and text */
 }
-/* navbar styles */
+/* navbar.html styles */
+/* navbar.html styles */
