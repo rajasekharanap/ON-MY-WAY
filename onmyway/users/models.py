@@ -20,7 +20,7 @@ class CustomUser(AbstractUser):
         return self.email
 
 class UserFiles(models.Model):
-    userfile = models.OneToOneField(CustomUser, on_delete=models.CASCADE, null=True, related_name='userfiles')
+    userfile = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, related_name='userfiles')
     govtid = models.FileField(upload_to='govtid', null=True)
     license = models.FileField(upload_to='license', null=True)
     vehiclecertificate = models.FileField(upload_to='vehiclecertificate', null=True)

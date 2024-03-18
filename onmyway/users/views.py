@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import make_password
 import re
 from .models import CustomUser, UserFiles
 
@@ -52,11 +53,12 @@ def register(request):
                 messages.error(request, error)
             return redirect('register')
         else:
+            hashed_password = make_password(password)
             user = CustomUser.objects.create(
                 email = email,
                 fullname = fullname,
                 phone = phone, 
-                password = password,
+                password = hashed_password,
                 usertype = usertype
             )
             user.save()
@@ -74,11 +76,11 @@ def register(request):
 
 
 def user_login(request):
+    
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        print(email, password)
-
+        print(email, password)      
         user = authenticate(email=email, password=password)
         print(user)
         if user is not None:
@@ -103,3 +105,10 @@ def forgotpassword(request):
 
 def userprofile(request):
     return render(request, 'users/userprofile.html')
+
+
+ # if CustomUser.objects.filter(email=email).exists():
+        #     print('yes')
+        #     loguser = CustomUser.objects.get(email=email)
+        #     if loguser.password == password:
+        #         return redirect('userprofile')
