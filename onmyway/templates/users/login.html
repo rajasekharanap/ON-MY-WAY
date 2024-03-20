@@ -14,6 +14,11 @@
     <div class="login_containerright">
       <div class="login_loginform">
         <h1 class="login_heading">Login</h1>
+        {% for message in messages %}
+        <div class="login_alert alert-{{ messages.tags }}">{{ message }}
+          <button class="login_close_btn" aria-label="Close">×</button>
+        </div>
+        {% endfor %}
         <form action="{% url 'user_login' %}" method="post">
           {% csrf_token %}
           <label class="login_label" for="email" >Email:</label>
@@ -28,5 +33,21 @@
       <h1 class="login_register"><a href="/register/">Register Here</a></h1>
     </div>
 </div>
+
+<script>
+  // To close the error message
+  const closeButtons = document.querySelectorAll('.login_close_btn');
+  // Add event listener to each close button
+  closeButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        // Find the parent alert div and remove it
+        const alertDiv = btn.closest('.login_alert');
+        if (alertDiv) {
+            alertDiv.parentNode.removeChild(alertDiv);
+        }
+    });
+});
+</script>
+
 {% endblock %}
   

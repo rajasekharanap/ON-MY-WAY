@@ -70,14 +70,14 @@
   }
   
   .working_half1 {
-    width: 60%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .working_half2 {
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-content: center;

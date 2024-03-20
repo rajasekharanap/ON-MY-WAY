@@ -76,19 +76,15 @@ def register(request):
 
 
 def user_login(request):
-    
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        print(email, password)      
         user = authenticate(email=email, password=password)
-        print(user)
         if user is not None:
             login(request, user)
-            messages.success(request, "Login Successful")
             return redirect('userprofile')
         else:
-            messages.success(request, "Invalid email or password. Please try again")
+            messages.error(request, "Invalid email or password. Please try again")
             return redirect('user_login')
     return render(request, 'users/login.html')
 
@@ -105,10 +101,3 @@ def forgotpassword(request):
 
 def userprofile(request):
     return render(request, 'users/userprofile.html')
-
-
- # if CustomUser.objects.filter(email=email).exists():
-        #     print('yes')
-        #     loguser = CustomUser.objects.get(email=email)
-        #     if loguser.password == password:
-        #         return redirect('userprofile')
